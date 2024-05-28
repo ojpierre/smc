@@ -6,6 +6,8 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: #f4f4f4;
+    cursor: url('static/images/custom-cursor.png'), auto;
+    /* Custom cursor */
 }
 
 header {
@@ -15,31 +17,84 @@ header {
     text-align: center;
 }
 
-nav {
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
-nav a {
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
+    display: block;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
 }
 
 .hero {
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     height: 400px;
-    color: #fff;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
+}
+
+h2, h3 {
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+label {
+    margin-left: 20px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    hover {
+        background-color: #555;
+    }
 }
 
 .hero h1 {
@@ -48,6 +103,31 @@ nav a:hover {
 
 .hero p {
     font-size: 1.5rem;
+}
+
+.hero form {
+    margin-top: 20px;
+}
+
+.hero input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hero button[type="submit"]:hover {
+    background-color: #555;
 }
 
 .container {
@@ -68,12 +148,33 @@ nav a:hover {
 }
 
 .feature img {
+    max-width: 300px;
+    border: 2px solid black;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.social {
+    text-align: center;
+    max-width: 300px;
+    margin: 1rem;
+}
+
+.social a img {
     max-width: 100px;
+    cursor: pointer;
+    /* Add cursor pointer for images */
 }
 
 .testimonials {
     background: #f9f9f9;
     padding: 2rem 0;
+    display: grid;
 }
 
 .testimonial {
@@ -103,4 +204,79 @@ footer {
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+}
+
+footer .social-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .social-buttons a {
+    display: inline-block;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+footer .social-buttons a:hover {
+    transform: scale(1.1);
+}
+
+footer .social-buttons img {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+    /* Make sure icons are white */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero form {
+        flex-direction: column;
+    }
+
+    .hero input[type="text"] {
+        margin: 0 0 10px 0;
+    }
+
+    .hero button[type="submit"] {
+        width: 100%;
+    }
+
+    footer .social-buttons a {
+        margin: 5px;
+    }
+
+    footer .social-buttons img {
+        width: 16px;
+        height: 16px;
+    }
 }

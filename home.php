@@ -20,43 +20,51 @@ if (!isset($_SESSION['user_id'])) {
 
 <body>
     <header>
+                <h1>Social Media Campaigns (SMC)</h1>
         <nav>
-            <a href="home.php">Home</a>
-            <a href="information.php">Information</a>
-            <a href="popular_apps.php">Popular Apps</a>
-            <a href="parents_help.php">Parents Help</a>
-            <a href="livestreaming.php">Livestreaming</a>
-            <a href="contact.php">Contact</a>
-            <a href="legislation.php">Legislation</a>
-            <?php if (!isset($_SESSION['user_id'])) : ?>
+            <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="information.php">Information</a></li>
+            <li><a href="popular_apps.php">Popular Apps</a></li>
+            <li><a href="parents_help.php">Parents Help</a></li>
+            <li><a href="livestreaming.php">Livestreaming</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="legislation.php">Legislation</a></li>
+            <li><?php if (!isset($_SESSION['user_id'])) : ?>
                 <a href="register.php">Register</a>
                 <a href="login.php">Login</a>
             <?php else : ?>
                 <a href="logout.php">Logout</a>
             <?php endif; ?>
+            </li>
+            </ul>
         </nav>
     </header>
     <div class="hero">
         <div>
             <h1>Welcome to Social Media Campaigns</h1>
             <p>Stay safe online with our tips and resources.</p>
+            <form action="search.php" method="GET">
+                <input type="text" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
         </div>
     </div>
     <main class="container">
         <section class="features">
             <div class="feature">
                 <img src="static/images/feature1.png" alt="Feature 1">
-                <h3>Feature 1</h3>
+                <h3>Privacy Protection</h3>
                 <p>Learn how to protect your privacy on social media platforms.</p>
             </div>
             <div class="feature">
                 <img src="static/images/feature2.png" alt="Feature 2">
-                <h3>Feature 2</h3>
+                <h3>Discover Apps</h3>
                 <p>Discover popular apps and their safety features.</p>
             </div>
             <div class="feature">
                 <img src="static/images/feature3.png" alt="Feature 3">
-                <h3>Feature 3</h3>
+                <h3>Acquire Safety Tips</h3>
                 <p>Get tips on how parents can help their kids stay safe online.</p>
             </div>
         </section>
@@ -77,6 +85,24 @@ if (!isset($_SESSION['user_id'])) {
             <a href="register.php">Register Now</a>
         </section>
     </main>
+    <section class="socials"> <h2>SOCIAL MEDIA APPS</h2>
+        
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="static/images/facebook-icon.png" alt="facebook">
+                </a>
+            </div>
+            <div class="social">
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="static/images/twitter-icon.png" alt="twitter">
+                </a>
+            </div>
+            <div class="social">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="static/images/instagram-icon.png" alt="instagram">
+                </a>
+            </div>
+        </section>
     <footer>
         <p>&copy; 2024 Social Media Campaigns Ltd. All rights reserved.</p>
     </footer>
