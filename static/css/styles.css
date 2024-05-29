@@ -52,6 +52,13 @@ nav ul li a:hover {
     padding: 0 2rem;
 }
 
+head title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 48px;
+}
+
 h2, h3 {
     font-size: 3rem;
 }
